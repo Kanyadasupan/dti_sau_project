@@ -1,3 +1,5 @@
+import 'package:dti_sau_project/views/login_ui.dart';
+import 'package:dti_sau_project/views/signup_ui.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeUI extends StatefulWidget {
@@ -45,7 +47,15 @@ class _WelcomeUIState extends State<WelcomeUI> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //เปิดLogin UI แบบย้อนกลับได้
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginUI(),
+                      ),
+                    );
+                  },
                   // ignore: sort_child_properties_last
                   child: Text(
                     'LOGIN',
@@ -63,7 +73,14 @@ class _WelcomeUIState extends State<WelcomeUI> {
                   width: MediaQuery.of(context).size.width * 0.05,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignupUI(),
+                      ),
+                    );
+                  },
                   // ignore: sort_child_properties_last
                   child: Text(
                     'SIGNUP',
