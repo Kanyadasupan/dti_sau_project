@@ -1,3 +1,6 @@
+// ignore_for_file: sort_child_properties_last
+
+import 'package:dti_sau_project/views/signup_ui.dart';
 import 'package:flutter/material.dart';
 
 class LoginUI extends StatefulWidget {
@@ -12,35 +15,31 @@ class _LoginUIState extends State<LoginUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.05,
-            right: MediaQuery.of(context).size.width * 0.05),
+        padding: const EdgeInsets.only(left: 30.0, right: 30.0),
         child: Center(
           child: Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.width * 0.05,
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Icon(
                   Icons.arrow_back_ios_new,
-                  size: MediaQuery.of(context).size.width * 0.05,
+                  size: MediaQuery.of(context).size.height * 0.05,
                 ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Image.asset(
-                  'assets/images/logo.png',
-                  width: MediaQuery.of(context).size.width * 0.5,
-                ),
+                child: Image.asset('assets/images/logo.png',
+                    height: MediaQuery.of(context).size.height * 0.2),
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Welcome Back',
+                  "Welcome Back, ",
                   style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.04,
+                    fontSize: MediaQuery.of(context).size.height * 0.035,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -48,46 +47,49 @@ class _LoginUIState extends State<LoginUI> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Make it work, make it right, make if fast',
+                  "Make it work, make it right, make it fast.",
                   style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.018,
+                    fontSize: MediaQuery.of(context).size.height * 0.02,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.width * 0.3,
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               TextField(
                 decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.person),
                   enabledBorder: OutlineInputBorder(),
                   focusedBorder: OutlineInputBorder(),
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.width * 0.03),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
               TextField(
+                obscureText: true,
                 decoration: InputDecoration(
-                  suffixIcon: Icon(
-                    Icons.visibility,
-                  ),
-                  hintText: "Password",
-                  prefixIcon: Icon(
-                    Icons.fingerprint,
-                  ),
+                  prefixIcon: Icon(Icons.fingerprint),
+                  suffixIcon: Icon(Icons.visibility),
                   enabledBorder: OutlineInputBorder(),
                   focusedBorder: OutlineInputBorder(),
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
                 ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
-                    "Farget Password?",
-                    style: TextStyle(
-                      color: Colors.blue,
-                    ),
-                  ),
+                  child: Text("Forgot Password?",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue)),
                 ),
               ),
               ElevatedButton(
@@ -95,26 +97,22 @@ class _LoginUIState extends State<LoginUI> {
                 child: Text(
                   "LOGIN",
                   style: TextStyle(
-                    color: Colors.white,
-                  ),
+                      fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  fixedSize: Size(
-                    MediaQuery.of(context).size.width,
-                    MediaQuery.of(context).size.height * 0.065,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    fixedSize: Size(MediaQuery.of(context).size.width,
+                        MediaQuery.of(context).size.height * 0.065),
+                    backgroundColor: Colors.black),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.width * 0.025,
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
-              Text('OR'),
+              Text("OR"),
               SizedBox(
-                height: MediaQuery.of(context).size.width * 0.013,
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
               OutlinedButton(
                 onPressed: () {},
@@ -122,23 +120,47 @@ class _LoginUIState extends State<LoginUI> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/googlelogo.png',
+                      "assets/images/googlelogo.png",
                       width: 20.0,
                     ),
                     Text(
-                      "Sing-in with Google",
-                    ),
+                      " Sign-In with Google",
+                    )
                   ],
                 ),
-                style: OutlinedButton.styleFrom(
+                style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0)),
-                  fixedSize: Size(
-                    MediaQuery.of(context).size.width,
-                    MediaQuery.of(context).size.width * 0.065,
+                    borderRadius: BorderRadius.circular(5.0),
                   ),
+                  fixedSize: Size(MediaQuery.of(context).size.width,
+                      MediaQuery.of(context).size.height * 0.065),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an Account?",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignupUI(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 33, 83, 232),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),

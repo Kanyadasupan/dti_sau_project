@@ -2,6 +2,7 @@ import 'package:dti_sau_project/views/login_ui.dart';
 import 'package:dti_sau_project/views/signup_ui.dart';
 import 'package:flutter/material.dart';
 
+//jh
 class WelcomeUI extends StatefulWidget {
   const WelcomeUI({super.key});
 
